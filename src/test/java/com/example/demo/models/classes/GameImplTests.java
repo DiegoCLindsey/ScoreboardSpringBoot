@@ -58,8 +58,8 @@ public class GameImplTests {
         assertEquals(0,game.getScore().getHomeScore());
         game.setScore(new ScoreImpl(1,2));
         assertNotNull(game.getScore());
-        assertEquals(1,game.getScore().getAwayScore());
-        assertEquals(2,game.getScore().getHomeScore());
+        assertEquals(2,game.getScore().getAwayScore());
+        assertEquals(1,game.getScore().getHomeScore());
 
     }
 }
