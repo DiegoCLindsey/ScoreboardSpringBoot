@@ -28,4 +28,32 @@ public class ScoreImplTests {
         assertEquals(0,score.getHomeScore());
     }
 
+    /**
+     * Using the interface increments methods results in a +1 update of the Away score
+     */
+    @Test
+    public void shouldIncrementAwayScore(){
+        ScoreImpl score = new ScoreImpl();
+        assertNotNull(score);
+        assertEquals(0,score.getAwayScore());
+        assertEquals(0,score.getHomeScore());
+        score.AwayTeamScores();
+        assertEquals(0,score.getHomeScore());
+        assertEquals(1,score.getAwayScore());
+    }
+
+    /**
+     * Using the interface increments methods results in a +1 update of the Away score
+     */
+    @Test
+    public void shouldIncrementHomeScore(){
+        ScoreImpl score = new ScoreImpl();
+        assertNotNull(score);
+        assertEquals(0,score.getAwayScore());
+        assertEquals(0,score.getHomeScore());
+        score.HomeTeamScores();
+        assertEquals(1,score.getHomeScore());
+        assertEquals(0,score.getAwayScore());
+    }
+
 }
