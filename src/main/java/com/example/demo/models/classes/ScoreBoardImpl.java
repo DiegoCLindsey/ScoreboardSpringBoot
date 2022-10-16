@@ -1,6 +1,7 @@
 package com.example.demo.models.classes;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.BiFunction;
@@ -51,7 +52,9 @@ public class ScoreBoardImpl implements ScoreBoard{
 
     @Override
     public List<Game> getSummary() {
-        return this.games.stream().sorted((a ,b )->  this.getTotalScore(b) - this.getTotalScore(a)).collect(Collectors.toList());
+        List<Game>response = this.games.stream().sorted((a ,b )->  this.getTotalScore(a) - this.getTotalScore(b)).collect(Collectors.toList());
+        Collections.reverse(response);
+        return response;
     }
 
     private int getTotalScore(Game game){

@@ -88,12 +88,12 @@ public class ScoreBoardImplTests {
         List<Game> data = this.getDataFromSystem();
         ScoreBoardImpl scoreboard = new ScoreBoardImpl(data);
         
-        List<Integer> expectedOrder = List.of(4,2,1,5,3);
+        List<Integer> expectedOrder = List.of(3,1,0,4,2);
         List<Game> resume = scoreboard.getSummary();
         
         // Check order
         for(int i=0;i<expectedOrder.size();i++){
-            assertEquals(expectedOrder.get(i), resume.indexOf(game));
+            assertEquals(expectedOrder.get(i), resume.indexOf(data.get(i)));
         }  
     }
 
