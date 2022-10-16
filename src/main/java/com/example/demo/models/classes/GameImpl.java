@@ -28,9 +28,9 @@ public class GameImpl implements Game{
     }
 
     @Override
-    public int getScore() {
+    public Score getScore() {
         // TODO Auto-generated method stub
-        return 0;
+        return this.score;
     }
 
     @Override

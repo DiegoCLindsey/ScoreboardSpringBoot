@@ -17,7 +17,7 @@ public class GameImplTests {
         assertNotNull(game.getScore());
         assertEquals("Home", game.getHomeTeam().getName());
         assertEquals("Away", game.getAwayTeam().getName());
-        assertEqueals(0,game.getScore().getAwayScore());
+        assertEquals(0,game.getScore().getAwayScore());
         assertEquals(0,game.getScore().getHomeScore());
     }
 
