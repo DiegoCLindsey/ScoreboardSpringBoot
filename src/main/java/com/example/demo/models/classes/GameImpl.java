@@ -12,31 +12,41 @@ public class GameImpl implements Game{
 
 
     public GameImpl(Team homeTeam, Team awayTeam){
-        //TODO: Implement constructor
+        this.homeTeam = homeTeam;
+        this.awayTeam = awayTeam;
+        this.score = new ScoreImpl();
     }
 
+    /**
+     * @return the Away {@link Team} Object.
+     */
     @Override
     public Team getAwayTeam() {
-        // TODO Auto-generated method stub
-        return null;
+        return this.awayTeam;
     }
-
+    
+    /**
+     * @return the Home {@link Team} Object.
+     */
     @Override
     public Team getHomeTeam() {
-        // TODO Auto-generated method stub
-        return null;
+        return this.homeTeam;
     }
 
+    /**
+     * @return the Game {@link Score} Object.
+     */
     @Override
     public Score getScore() {
-        // TODO Auto-generated method stub
         return this.score;
     }
 
+    /**
+     * Updates Score with a new {@link Score} Object.
+     */
     @Override
     public void setScore(Score newScore) {
-        // TODO Auto-generated method stub
-        
+        this.score = newScore;        
     }
     
 }
