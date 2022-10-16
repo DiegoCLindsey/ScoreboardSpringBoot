@@ -10,13 +10,13 @@ public interface ScoreBoard {
      * Adds a match to the scoreboard
      * @param newGame
      */
-    void startGame(Game newGame);
+    void startGame(Game newGame) ;
 
     /**
      * Removes a match from the scoreboard
      * @param game
      */
-    void finishGame(Game game);
+    void finishGame(Game game) throws GameNotFoundException;
 
     /**
      * Updates the score of a match in the scoreboard.

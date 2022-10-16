@@ -13,13 +13,13 @@ public class ScoreBoardImpl implements ScoreBoard{
     }
 
     @Override
-    public void startGame(Game newGame) {
+    public void startGame(Game newGame){
         // TODO Auto-generated method stub
         
     }
 
     @Override
-    public void finishGame(Game game) {
+    public void finishGame(Game game) throws GameNotFoundException{
         // TODO Auto-generated method stub
         
     }
