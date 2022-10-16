@@ -17,7 +17,7 @@ public interface Game {
 
     /**
      * 
-     * @return the number of points scored during the game
+     * @return the {@link Score} of the game
      */
     Score  getScore();
 
