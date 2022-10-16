@@ -60,17 +60,17 @@ public class ScoreBoardImplTests {
     }
 
     @Test 
-    public void shouldBeAbleToGetGameScore(){
+    public void shouldBeAbleToUpdateGameScore() throws GameNotFoundException{
+        List<GameImpl> games = new ArrayList<>();
+        games.add(this.game);
+        ScoreBoardImpl scoreBoard = new ScoreBoardImpl(games);
+        ScoreImpl score = new ScoreImpl(1,2);
 
+        scoreBoard.updateScore(game,score);
     }
 
     @Test 
     public void shouldGenerateSummary(){
-
-    }
-
-    @Test
-    public void shouldBeAbleToUpdateGameScore(){
 
     }
 

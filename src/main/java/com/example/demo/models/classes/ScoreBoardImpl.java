@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.example.demo.models.exceptions.GameNotFoundException;
 import com.example.demo.models.interfaces.Game;
+import com.example.demo.models.interfaces.Score;
 import com.example.demo.models.interfaces.ScoreBoard;
 
 public class ScoreBoardImpl implements ScoreBoard{
@@ -16,19 +17,19 @@ public class ScoreBoardImpl implements ScoreBoard{
        }
 
     @Override
-    public void startGame(GameImpl newGame){
+    public void startGame(Game newGame){
         // TODO Auto-generated method stub
         
     }
 
     @Override
-    public void finishGame(GameImpl game) throws GameNotFoundException{
+    public void finishGame(Game game) throws GameNotFoundException{
         // TODO Auto-generated method stub
         
     }
 
     @Override
-    public void updateScore(GameImpl game, ScoreImpl score) throws GameNotFoundException {
+    public void updateScore(Game game, Score score) throws GameNotFoundException {
         // TODO Auto-generated method stub
         
     }
