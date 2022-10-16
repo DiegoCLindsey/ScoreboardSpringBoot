@@ -2,6 +2,7 @@ package com.example.demo.models.classes;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,6 +68,9 @@ public class ScoreBoardImplTests {
         ScoreImpl score = new ScoreImpl(1,2);
 
         scoreBoard.updateScore(game,score);
+
+        assertEquals(1,score.getHomeScore());
+        assertEquals(2,score.getAwayScore());
     }
 
     @Test 
@@ -76,11 +80,28 @@ public class ScoreBoardImplTests {
 
     @Test
     public void shouldThrowExceptionOnNonExistingGameUpdate(){
+        List<GameImpl> games = new ArrayList<>();
+        ScoreBoardImpl scoreBoard = new ScoreBoardImpl(games);
+        ScoreImpl score = new ScoreImpl(1,2);
 
+        try{
+            scoreBoard.updateScore(this.game,score);
+            fail();
+        }catch(Exception e){
+            assertEquals(GameNotFoundException.class, e.getClass());
+        }
     }
 
     @Test
     public void shouldThrowExceptionOnNonExistingGameFinish(){
+        List<GameImpl> games = new ArrayList<>();
+        ScoreBoardImpl scoreBoard = new ScoreBoardImpl(games);
 
+        try{
+            scoreBoard.finishGame(this.game);
+            fail();
+        }catch(Exception e){
+            assertEquals(GameNotFoundException.class, e.getClass());
+        }
     }
 }
