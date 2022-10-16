@@ -19,7 +19,7 @@ public interface Game {
      * 
      * @return the number of points scored during the game
      */
-    int  getScore();
+    Score  getScore();
 
     /**
      * Sets the score of the game given a {@link Score} pair
