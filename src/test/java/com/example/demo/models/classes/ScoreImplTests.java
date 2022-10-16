@@ -13,8 +13,8 @@ public class ScoreImplTests {
     public void shouldCreateObject(){
         ScoreImpl score = new ScoreImpl(1,2);
         assertNotNull(score);
-        assertEquals(1,score.getAwayScore());
-        assertEquals(2,score.getHomeScore());
+        assertEquals(1,score.getHomeScore());
+        assertEquals(2,score.getAwayScore());
     }
 
     /**

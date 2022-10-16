@@ -26,9 +26,9 @@ public class ScoreImpl implements Score{
      * @param awayTeamScore the number of points of 'Away Team'
      * @param homeTeamScore the number of points of 'Home Team'
      */
-    public ScoreImpl(int awayTeamScore, int homeTeamScore){
-        this.awayTeamScore = awayTeamScore;
+    public ScoreImpl(int homeTeamScore,int awayTeamScore){
         this.homeTeamScore = homeTeamScore;
+        this.awayTeamScore = awayTeamScore;
     }
 
     /**

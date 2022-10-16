@@ -59,5 +59,9 @@ public class GameImpl implements Game{
     public void setScore(Score newScore) {
         this.score = newScore;        
     }
+
+    public String toString(){
+        return this.homeTeam.toString()+" "+this.score.getHomeScore()+" - "+this.awayTeam.toString()+" "+this.score.getAwayScore();
+    }
     
 }
