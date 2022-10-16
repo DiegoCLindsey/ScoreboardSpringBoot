@@ -10,6 +10,7 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 import com.example.demo.models.exceptions.GameNotFoundException;
+import com.example.demo.models.interfaces.Game;
 
 public class ScoreBoardImplTests {
     private TeamImpl away = new TeamImpl("Away");
@@ -73,24 +74,27 @@ public class ScoreBoardImplTests {
         assertEquals(2,score.getAwayScore());
     }
 
-
     /**
      * The summary would provide with the following information:
-     * Uruguay 6 - Italy 6
-     * Spain 10 - Brazil 2
-     * Mexico 0 - Canada 5
-     * Argentina 3 - Australia 1
-     * Germany 2 - France 2
+     * 4 Uruguay 6 - Italy 6
+     * 2 Spain 10 - Brazil 2
+     * 1 Mexico 0 - Canada 5
+     * 5 Argentina 3 - Australia 1
+     * 3 Germany 2 - France 2
      */
     @Test 
     public void shouldGenerateSummary(){
         // Generate Games Dataset
         List<GameImpl> data = this.getDataFromSystem();
         ScoreBoardImpl scoreboard = new ScoreBoardImpl(data);
-
-
-    
-
+        
+        List<Integer> expectedOrder = List.of(4,2,1,5,3);
+        List<Game> resume = scoreboard.getSummary();
+        
+        // Check order
+        for(int i=0;i<expectedOrder.size();i++){
+            assertEquals(expectedOrder.get(i), resume.indexOf(game));
+        }  
     }
 
     @Test
@@ -121,14 +125,12 @@ public class ScoreBoardImplTests {
     }
 
 
-
     /**
-     * As an example, being the current data in the system:
-     * Mexico - Canada: 0 - 5
-     * Spain - Brazil: 10 – 2
-     * Germany - France: 2 – 2
-     * Uruguay - Italy: 6 – 6
-     * Argentina - Australia: 3 - 1
+     * 1 Mexico - Canada: 0 - 5
+     * 2 Spain - Brazil: 10 – 2
+     * 3 Germany - France: 2 – 2
+     * 4 Uruguay - Italy: 6 – 6
+     * 5 Argentina - Australia: 3 - 1
      */
     private List<GameImpl> getDataFromSystem(){
         List<GameImpl> games = new ArrayList<>();
