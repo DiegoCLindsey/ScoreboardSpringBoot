@@ -14,6 +14,14 @@ public class ScoreImpl implements Score{
     private int homeTeamScore;
 
     /**
+     * Public Empty constructor. Initializes values to zero
+     */
+    public ScoreImpl(){
+        this.awayTeamScore = 0;
+        this.homeTeamScore = 0;
+    }
+
+    /**
      * Public constructor to instanciate a Score Object
      * @param awayTeamScore the number of points of 'Away Team'
      * @param homeTeamScore the number of points of 'Home Team'
