@@ -12,24 +12,42 @@ public class GameImplTests {
         TeamImpl away = new TeamImpl("Away");
         GameImpl game = new GameImpl(home, away);
         assertNotNull(game);
+    }
+
+    @Test
+    public void shouldBeAbleToGetItsTeams(){
+        TeamImpl home = new TeamImpl("Home");
+        TeamImpl away = new TeamImpl("Away");
+        GameImpl game = new GameImpl(home, away);
         assertNotNull(game.getHomeTeam());
         assertNotNull(game.getAwayTeam());
-        assertNotNull(game.getScore());
         assertEquals("Home", game.getHomeTeam().getName());
         assertEquals("Away", game.getAwayTeam().getName());
+    }
+
+    @Test
+    public void shouldBeAbleToGetGameScore(){
+        TeamImpl home = new TeamImpl("Home");
+        TeamImpl away = new TeamImpl("Away");
+        GameImpl game = new GameImpl(home, away);
+        assertNotNull(game.getScore());
         assertEquals(0,game.getScore().getAwayScore());
         assertEquals(0,game.getScore().getHomeScore());
-    }
-
-    public void shouldBeAbleToGetItsTeams(){
-        
-    }
-
-    public void shouldBeAbleToGetGameScore(){
 
     }
     
+    @Test
     public void shouldUpdateScoresCorrectly(){
+        TeamImpl home = new TeamImpl("Home");
+        TeamImpl away = new TeamImpl("Away");
+        GameImpl game = new GameImpl(home, away);
+        assertNotNull(game.getScore());
+        assertEquals(0,game.getScore().getAwayScore());
+        assertEquals(0,game.getScore().getHomeScore());
+        game.setScore(new ScoreImpl(1,2));
+        assertNotNull(game.getScore());
+        assertEquals(1,game.getScore().getAwayScore());
+        assertEquals(2,game.getScore().getHomeScore());
 
     }
 }
