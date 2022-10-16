@@ -1,6 +1,7 @@
 package com.example.demo.models.classes;
 
 import java.util.Collection;
+import java.util.List;
 
 import com.example.demo.models.exceptions.GameNotFoundException;
 import com.example.demo.models.interfaces.Game;
@@ -8,9 +9,12 @@ import com.example.demo.models.interfaces.ScoreBoard;
 
 public class ScoreBoardImpl implements ScoreBoard{
 
-    public ScoreBoardImpl(Collection<Game> data){
-        // TODO: Implement constructor
-    }
+    private List<GameImpl> games;
+
+
+    public ScoreBoardImpl(List<GameImpl> data){
+        this.games.addAll(data);
+       }
 
     @Override
     public void startGame(Game newGame){
@@ -31,7 +35,7 @@ public class ScoreBoardImpl implements ScoreBoard{
     }
 
     @Override
-    public Collection<Game> getSummary() {
+    public List<Game> getSummary() {
         // TODO Auto-generated method stub
         return null;
     }
