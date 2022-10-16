@@ -16,4 +16,16 @@ public class ScoreImplTests {
         assertEquals(1,score.getAwayScore());
         assertEquals(2,score.getHomeScore());
     }
+
+    /**
+     * Without further information, a score is set by default to 0,0
+     */
+    @Test
+    public void shouldCreateEmptyScoreWithZeros(){
+        ScoreImpl score = new ScoreImpl();
+        assertNotNull(score);
+        assertEquals(0,score.getAwayScore());
+        assertEquals(0,score.getHomeScore());
+    }
+
 }
