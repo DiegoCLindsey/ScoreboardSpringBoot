@@ -73,8 +73,23 @@ public class ScoreBoardImplTests {
         assertEquals(2,score.getAwayScore());
     }
 
+
+    /**
+     * The summary would provide with the following information:
+     * Uruguay 6 - Italy 6
+     * Spain 10 - Brazil 2
+     * Mexico 0 - Canada 5
+     * Argentina 3 - Australia 1
+     * Germany 2 - France 2
+     */
     @Test 
     public void shouldGenerateSummary(){
+        // Generate Games Dataset
+        List<GameImpl> data = this.getDataFromSystem();
+        ScoreBoardImpl scoreboard = new ScoreBoardImpl(data);
+
+
+    
 
     }
 
@@ -103,5 +118,37 @@ public class ScoreBoardImplTests {
         }catch(Exception e){
             assertEquals(GameNotFoundException.class, e.getClass());
         }
+    }
+
+
+
+    /**
+     * As an example, being the current data in the system:
+     * Mexico - Canada: 0 - 5
+     * Spain - Brazil: 10 – 2
+     * Germany - France: 2 – 2
+     * Uruguay - Italy: 6 – 6
+     * Argentina - Australia: 3 - 1
+     */
+    private List<GameImpl> getDataFromSystem(){
+        List<GameImpl> games = new ArrayList<>();
+        GameImpl mexico_canada = new GameImpl(new TeamImpl("Mexico"), new TeamImpl("Canada"));
+        mexico_canada.setScore(new ScoreImpl(0,5));
+
+        GameImpl spain_brazil = new GameImpl(new TeamImpl("Spain"), new TeamImpl("Brazil"));
+        spain_brazil.setScore(new ScoreImpl(10,2));
+
+        GameImpl germany_france = new GameImpl(new TeamImpl("Germany"), new TeamImpl("France"));
+        germany_france.setScore(new ScoreImpl(2,2));
+
+        GameImpl uruguay_italy = new GameImpl(new TeamImpl("Uruguay"), new TeamImpl("Italy"));
+        uruguay_italy.setScore(new ScoreImpl(6,6));
+
+        GameImpl argentina_australia = new GameImpl(new TeamImpl("Argentina"), new TeamImpl("Australia"));
+        argentina_australia.setScore(new ScoreImpl(3,1));
+
+        games.addAll(List.of(mexico_canada,spain_brazil,germany_france,uruguay_italy,argentina_australia));
+
+        return games;
     }
 }
