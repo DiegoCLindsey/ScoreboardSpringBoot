@@ -22,7 +22,7 @@ public class ScoreBoardImplTests {
     @Test
     public void shouldCreateObject(){
         // Initialize objects
-        List<GameImpl> games = new ArrayList<>();
+        List<Game> games = new ArrayList<>();
         games.add(this.game);
         ScoreBoardImpl scoreBoard = new ScoreBoardImpl(games);
 
@@ -34,7 +34,7 @@ public class ScoreBoardImplTests {
 
     @Test
     public void shouldBeAbleToStartGames(){
-        List<GameImpl> games = new ArrayList<>();
+        List<Game> games = new ArrayList<>();
         ScoreBoardImpl scoreBoard = new ScoreBoardImpl(games);
 
         // Check Empty
@@ -48,7 +48,7 @@ public class ScoreBoardImplTests {
 
     @Test
     public void shouldBeAbleToFinishGames() throws GameNotFoundException{
-        List<GameImpl> games = new ArrayList<>();
+        List<Game> games = new ArrayList<>();
         games.add(this.game);
         ScoreBoardImpl scoreBoard = new ScoreBoardImpl(games);
 
@@ -63,7 +63,7 @@ public class ScoreBoardImplTests {
 
     @Test 
     public void shouldBeAbleToUpdateGameScore() throws GameNotFoundException{
-        List<GameImpl> games = new ArrayList<>();
+        List<Game> games = new ArrayList<>();
         games.add(this.game);
         ScoreBoardImpl scoreBoard = new ScoreBoardImpl(games);
         ScoreImpl score = new ScoreImpl(1,2);
@@ -85,7 +85,7 @@ public class ScoreBoardImplTests {
     @Test 
     public void shouldGenerateSummary(){
         // Generate Games Dataset
-        List<GameImpl> data = this.getDataFromSystem();
+        List<Game> data = this.getDataFromSystem();
         ScoreBoardImpl scoreboard = new ScoreBoardImpl(data);
         
         List<Integer> expectedOrder = List.of(4,2,1,5,3);
@@ -99,7 +99,7 @@ public class ScoreBoardImplTests {
 
     @Test
     public void shouldThrowExceptionOnNonExistingGameUpdate(){
-        List<GameImpl> games = new ArrayList<>();
+        List<Game> games = new ArrayList<>();
         ScoreBoardImpl scoreBoard = new ScoreBoardImpl(games);
         ScoreImpl score = new ScoreImpl(1,2);
 
@@ -113,7 +113,7 @@ public class ScoreBoardImplTests {
 
     @Test
     public void shouldThrowExceptionOnNonExistingGameFinish(){
-        List<GameImpl> games = new ArrayList<>();
+        List<Game> games = new ArrayList<>();
         ScoreBoardImpl scoreBoard = new ScoreBoardImpl(games);
 
         try{
@@ -132,8 +132,8 @@ public class ScoreBoardImplTests {
      * 4 Uruguay - Italy: 6 – 6
      * 5 Argentina - Australia: 3 - 1
      */
-    private List<GameImpl> getDataFromSystem(){
-        List<GameImpl> games = new ArrayList<>();
+    private List<Game> getDataFromSystem(){
+        List<Game> games = new ArrayList<>();
         GameImpl mexico_canada = new GameImpl(new TeamImpl("Mexico"), new TeamImpl("Canada"));
         mexico_canada.setScore(new ScoreImpl(0,5));
 
