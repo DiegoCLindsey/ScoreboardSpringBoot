@@ -22,7 +22,7 @@ public interface ScoreBoard {
      * Updates the score of a match in the scoreboard.
      * @param game the game to update 
      */
-    void updateScore(Game game) throws GameNotFoundException;
+    void updateScore(Game game, Score score) throws GameNotFoundException;
 
     /**
      * 
