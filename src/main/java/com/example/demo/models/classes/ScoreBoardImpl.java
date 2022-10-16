@@ -51,7 +51,7 @@ public class ScoreBoardImpl implements ScoreBoard{
 
     @Override
     public List<Game> getSummary() {
-        return this.games.stream().sorted((a ,b )->  this.getTotalScore(a) - this.getTotalScore(b)).collect(Collectors.toList());
+        return this.games.stream().sorted((a ,b )->  this.getTotalScore(b) - this.getTotalScore(a)).collect(Collectors.toList());
     }
 
     private int getTotalScore(Game game){
