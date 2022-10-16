@@ -2,10 +2,7 @@ package com.example.demo.models.classes;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
-import java.util.function.BiFunction;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import com.example.demo.models.exceptions.GameNotFoundException;
