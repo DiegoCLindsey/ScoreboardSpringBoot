@@ -76,11 +76,11 @@ public class ScoreBoardImplTests {
 
     /**
      * The summary would provide with the following information:
-     * 4 Uruguay 6 - Italy 6
-     * 2 Spain 10 - Brazil 2
-     * 1 Mexico 0 - Canada 5
-     * 5 Argentina 3 - Australia 1
-     * 3 Germany 2 - France 2
+     * 3 Uruguay 6 - Italy 6
+     * 1 Spain 10 - Brazil 2
+     * 0 Mexico 0 - Canada 5
+     * 4 Argentina 3 - Australia 1
+     * 2 Germany 2 - France 2
      */
     @Test 
     public void shouldGenerateSummary(){
@@ -93,7 +93,8 @@ public class ScoreBoardImplTests {
         
         // Check order
         for(int i=0;i<expectedOrder.size();i++){
-            assertEquals(expectedOrder.get(i), resume.indexOf(data.get(i)));
+
+            assertEquals(expectedOrder.get(i), data.indexOf(resume.get(i)));
         }  
     }
 
