@@ -1,6 +1,5 @@
 package com.example.demo.models.classes;
 
-import java.util.Collection;
 import java.util.List;
 
 import com.example.demo.models.exceptions.GameNotFoundException;
