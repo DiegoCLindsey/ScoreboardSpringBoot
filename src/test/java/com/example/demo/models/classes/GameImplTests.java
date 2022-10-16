@@ -6,6 +6,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GameImplTests {
     
+    /**
+     * Basic test. Checks if the Game object instantiates correctly.
+     */
     @Test
     public void shouldCreateObject(){
         TeamImpl home = new TeamImpl("Home");
@@ -14,6 +17,9 @@ public class GameImplTests {
         assertNotNull(game);
     }
 
+    /**
+     * Checks if the games are correctly set after object construction.
+     */
     @Test
     public void shouldBeAbleToGetItsTeams(){
         TeamImpl home = new TeamImpl("Home");
@@ -25,6 +31,9 @@ public class GameImplTests {
         assertEquals("Away", game.getAwayTeam().getName());
     }
 
+    /**
+     * Checks if the game Score is correctly set after object construction.
+     */
     @Test
     public void shouldBeAbleToGetGameScore(){
         TeamImpl home = new TeamImpl("Home");
@@ -36,6 +45,9 @@ public class GameImplTests {
 
     }
     
+    /**
+     * Checks if the game Score is correctly updated after setScore() method
+     */
     @Test
     public void shouldUpdateScoresCorrectly(){
         TeamImpl home = new TeamImpl("Home");
