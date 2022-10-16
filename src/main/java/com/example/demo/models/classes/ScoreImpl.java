@@ -45,5 +45,18 @@ public class ScoreImpl implements Score{
     public int getHomeScore(){
         return this.homeTeamScore;
     }
+
+    /**
+     * Increments the 'Away team' score by 1
+     */
+    public void AwayTeamScores(){
+        this.awayTeamScore++;
+    }
     
+    /**
+     * Increments the 'Home team' score by 1
+     */
+    public void HomeTeamScores(){
+        this.homeTeamScore++;
+    }
 }
